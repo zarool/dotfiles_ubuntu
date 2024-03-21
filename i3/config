@@ -35,6 +35,7 @@ exec_always --no-startup-id feh --no-fehbg --bg-scale ~/.config/i3/assets/bg.jpe
 # dual monitor config i3
 exec --no-startup-id xrandr --output DisplayPort-0 --auto --left-of HDMI-A-0
 
+
 # start dmenu (a program launcher)
 # bindsym $mod+d exec rofi -show run -opacity "80"
 # There also is the (new) i3-dmenu-desktop which only displays applications
@@ -57,29 +58,34 @@ exec --no-startup-id pulseaudio
 
 # touchpad
 exec xinput set-prop  MSFT0001:01\ 06CB:7F90\ Touchpad "libinput Tapping Enabled" 1
+
+# battery popup
 exec --no-startup-id i3-battery-popup-L 20 -l 10 -m "Ładowara kurwa!"
 
 # Polish keymap
 exec setxkbmap pl
 
-# sticky notes
-exec --no-startup-id exec qownnotes
+# spotify
+# exec_always --no-startup-id exec spotify
+
+# black screen laptop  (20 minutes duration)
+exec_always xset s 1200
+exec_always xset dpms 0 0 1200
 
 
 #################################
 #          Coloring             #
 #################################
 
-
 ################################
 # dark theme
 # class                 border  bground text    indicator child_border
-client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
-client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
-client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
-client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
-client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
-client.background       #F8F8F2
+# client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
+# client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
+# client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
+# client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
+# client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
+# client.background       #F8F8F2
  
 # theme machiato
 set $rosewater #f5e0dc
@@ -117,7 +123,6 @@ client.unfocused         $overlay0 $base $text  $rosewater $overlay0
 client.urgent            $peach    $base $peach $overlay0  $peach
 client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
 client.background        $base
-
 
 
 #################################
@@ -228,6 +233,9 @@ bindsym $mod+Escape mode "passthrough"
 # screenshot
 bindsym $mod+shift+s exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
 
+# calendar
+bindsym $mod+c exec zenity --calendar
+
 #################################
 #          Workspaces           #
 #################################
@@ -279,13 +287,12 @@ for_window [class="QOwnNotes"] move to workspace $ws7
 #          Tiles conf           #
 #################################
 
-# gaps between windows
 # You can also use any non-zero value if you'd like to have a border
-
 for_window [all] border pixel 2
+
+# gaps between windows
 gaps outer 3
 gaps inner 10
-
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -437,3 +444,9 @@ mode "$mode_gaps_left" {
 }
 
 
+#################################
+#     Neovim Todo startup       #
+#################################
+
+# sticky notes, todo list - does not work
+# exec_always --no-startup-id i3-msg 'workspace 7; exec alacritty -e nvim ~/todo'

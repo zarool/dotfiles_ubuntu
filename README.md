@@ -3,6 +3,8 @@ Currently using on Ubuntu 22.04, with a few bash programs
 
 ![Screenshot](assets/bg.png)
 
+![Screenshot](assets/nvim.png)
+
 | Module | Version | Description
 | -      | -       | -
 | [i3](https://i3wm.org/) | `4.23`| New display management
