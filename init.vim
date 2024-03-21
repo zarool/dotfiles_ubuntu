@@ -72,7 +72,7 @@ let g:airline_theme = 'tender'
 
 " stuff
 " g:ycm_always_populate_location_list = 1
-
+""""""""""""""""""""""""""""""""
 " auto complete
 inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
 
