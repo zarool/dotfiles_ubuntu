@@ -124,6 +124,8 @@ alias ls="exa"
 alias ll="exa -alh"
 alias tree="exa --tree"
 
+alias gitsetup="eval '$(ssh-agent -s)' && ssh-add -k ~/.ssh/github"
+
 # CUSTOM SCRIPTS
 export PATH=$PATH:~/bin
 
