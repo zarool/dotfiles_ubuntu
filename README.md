@@ -1,7 +1,7 @@
 # Dotfiles for linux
 Currently using on Ubuntu 22.04, with a few bash programs
 
-![Screenshot](assets/bg.png)
+![Screenshot](assets/bg1.png)
 
 ![Screenshot](assets/nvim.png)
 
