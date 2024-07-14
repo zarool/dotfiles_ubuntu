@@ -30,10 +30,11 @@ exec_always --no-startup-id picom --config ~/.config/picom/picom.conf -b
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 # background
-exec_always --no-startup-id feh --no-fehbg --bg-scale ~/.config/i3/assets/bg.jpeg
+exec_always --no-startup-id feh --no-fehbg --bg-scale ~/.config/i3/assets/bg.jpg
 
 # dual monitor config i3
-exec --no-startup-id xrandr --output DisplayPort-0 --auto --left-of HDMI-A-0
+exec_always --no-startup-id xrandr --output HDMI-A-0 --mode 1920x1080 --primary --rate 120.00 --right-of eDP
+
 
 
 # start dmenu (a program launcher)
@@ -60,7 +61,7 @@ exec --no-startup-id pulseaudio
 exec xinput set-prop  MSFT0001:01\ 06CB:7F90\ Touchpad "libinput Tapping Enabled" 1
 
 # battery popup
-exec --no-startup-id i3-battery-popup-L 20 -l 10 -m "Ładowara kurwa!"
+exec --no-startup-id i3-battery-popup -L 20 -l 10 -m "Ładowara kurwa!"
 
 # Polish keymap
 exec setxkbmap pl

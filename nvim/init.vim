@@ -62,6 +62,11 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 autocmd vimenter * if !argc() | NERDTree | endif
 
 
+" run terminal below - doesn't work
+" nnoremap <C-b> :vsp<bar>term<CR>
+" autocmd TermOpen * startinsert
+
+
 """""""""""""""""""""""""""""""
 " theme
 set termguicolors

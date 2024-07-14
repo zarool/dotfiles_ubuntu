@@ -134,5 +134,21 @@ eval "$(zoxide init bash)"
 alias cd=z
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
+# ESP32 IDF
+alias espidf='. $HOME/esp/esp-idf/export.sh'
+
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+
+# Generate output on start of terminal
+
+#cbonsai -p -m "$(fortune)"
+bonsai -T -L 30 -g 100,50 -m "$(fortune)"
+echo ""
+neofetch
+
+PS1='\[\033[01;32m\]\u\[\033[00m\] \[\033[01;34m\]\w\[\033[00m\]\$: '
+
