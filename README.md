@@ -11,7 +11,8 @@ Currently using on Ubuntu 22.04, with a few bash programs
 | [polybar](https://github.com/polybar/polybar) | `3.5.7`| Customizing bar
 | [rofi](https://github.com/davatorium/rofi) | `1.7.1`| Search app
 | [picom](https://github.com/yshui/picom) | `v9`| Customizing windows - transparent background
-
+| [neofetch](https://github.com/dylanaraps/neofetch) | `7.1.0` | Getting info about system
+| [bonsai](https://gitlab.com/jallbrit/bonsai.sh) | `latest` | Generate ASCII bonsai tree
 
 ## Additional tools
 
