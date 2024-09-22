@@ -118,11 +118,9 @@ fi
 
 
 # CUSTOM ALIASES
-#alias ryba='cd ~/programming/maszt'
-#alias back='cd ~'
-alias ls="exa"
-alias ll="exa -alh"
-alias tree="exa --tree"
+alias ls="eza -al"
+alias ll="eza -alT"
+alias la="eza"
 
 alias gitsetup="eval '$(ssh-agent -s)' && ssh-add -k ~/.ssh/github"
 
@@ -132,7 +130,6 @@ export PATH=$PATH:~/bin
 # ZOXIDE RUN
 eval "$(zoxide init bash)"
 alias cd=z
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # ESP32 IDF
 alias espidf='. $HOME/esp/esp-idf/export.sh'
@@ -146,9 +143,7 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 # Generate output on start of terminal
 
 #cbonsai -p -m "$(fortune)"
-bonsai -T -L 30 -g 100,50 -m "$(fortune)"
-echo ""
-neofetch
+bonsai -T -L 30 -g "$COLUMNS",50 -m "$(fortune)"
+#neofetch
 
 PS1='\[\033[01;32m\]\u\[\033[00m\] \[\033[01;34m\]\w\[\033[00m\]\$: '
-
